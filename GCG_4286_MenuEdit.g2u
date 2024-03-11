@@ -1,0 +1,402 @@
+Program.Sub.ScreenSU.Start
+Gui.Form..Create
+Gui.Form..Size(22185,4320)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..BackColor(-2147483633)
+Gui.Form..MousePointer(0)
+Gui.Form..Sizeable(False)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form..Caption("DataSheet Entry")
+Gui.Form.GsGridControl1.Create(GsGridControl)
+Gui.Form.GsGridControl1.Size(21720,1560)
+Gui.Form.GsGridControl1.Position(90,1290)
+Gui.Form.GsGridControl1.Enabled(True)
+Gui.Form.GsGridControl1.Visible(True)
+Gui.Form.GsGridControl1.Event(RowCellClick,GsGridControl1_RowClick)
+Gui.Form.cmdAdd.Create(Button)
+Gui.Form.cmdAdd.Size(1200,420)
+Gui.Form.cmdAdd.Position(17535,480)
+Gui.Form.cmdAdd.Caption("Save")
+Gui.Form.cmdAdd.FontSize(8)
+Gui.Form.cmdAdd.TabStop(True)
+Gui.Form.cmdAdd.TabIndex(15)
+Gui.Form.cmdAdd.Event(Click,cmdAdd_Click)
+Gui.Form.cmdDelete.Create(Button)
+Gui.Form.cmdDelete.Size(1395,435)
+Gui.Form.cmdDelete.Position(20415,3090)
+Gui.Form.cmdDelete.Caption("Delete")
+Gui.Form.cmdDelete.FontSize(8)
+Gui.Form.cmdDelete.Event(Click,cmdDelete_Click)
+Gui.Form.lblAddANewFurnace.Create(Label,"Work Order",True,1020,255,0,450,270,True,0,"Arial",8,-2147483633,0)
+Gui.Form.txtJob.Create(TextBox,"",True,915,300,0,120,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtJob.MaxLength(6)
+Gui.Form.txtJob.Locked(True)
+Gui.Form.txtSuffix.Create(TextBox,"",True,480,300,0,1140,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtSuffix.Locked(True)
+Gui.Form.txtWorkcenter.Create(TextBox,"",True,795,300,0,3150,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtWorkcenter.Locked(True)
+Gui.Form.lblWorkcenter.Create(Label,"Workcenter",True,1005,255,0,3090,270,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblRad.Create(Label,"RAD#",True,675,255,0,4740,270,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblRad.TabStop(True)
+Gui.Form.lblRad.TabIndex(1)
+Gui.Form.ddlMM.Create(DropDownList)
+Gui.Form.ddlMM.Size(1290,330)
+Gui.Form.ddlMM.Position(6000,525)
+Gui.Form.lblMM.Create(Label,"MM1/MM2",True,1020,255,0,6165,270,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblMM.TabStop(True)
+Gui.Form.lblMM.TabIndex(2)
+Gui.Form.lblLineOperator.Create(Label,"Element Line Operator",True,1185,420,0,7365,165,True,2,"Arial",8,-2147483633,0)
+Gui.Form.txtLineOperator.Create(TextBox,"",True,1215,300,0,7350,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtLineOperator.MaxLength(3)
+Gui.Form.txtLineOperator.ControlGroup(1)
+Gui.Form.txtLineOperator.TabStop(True)
+Gui.Form.txtLineOperator.TabIndex(3)
+Gui.Form.txtLineOperator.DefaultValue("")
+Gui.Form.dtpLineDate.Create(DatePicker)
+Gui.Form.dtpLineDate.Size(1425,285)
+Gui.Form.dtpLineDate.Position(8730,525)
+Gui.Form.dtpLineDate.TabStop(True)
+Gui.Form.dtpLineDate.TabIndex(4)
+Gui.Form.lblElementLineDate.Create(Label,"Element Line Date",True,1185,420,0,8835,165,True,2,"Arial",8,-2147483633,0)
+Gui.Form.txtSwanWeldby.Create(TextBox,"",True,540,300,0,10275,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtSwanWeldby.MaxLength(4)
+Gui.Form.txtSwanWeldby.ControlGroup(1)
+Gui.Form.txtSwanWeldby.TabStop(True)
+Gui.Form.txtSwanWeldby.TabIndex(5)
+Gui.Form.txtSwanWeldby.DefaultValue("")
+Gui.Form.lblSwanWeldBy.Create(Label,"Swan Weld by",True,705,420,0,10200,150,True,2,"Arial",8,-2147483633,0)
+Gui.Form.txtOuterSeam.Create(TextBox,"",True,375,300,0,11055,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtOuterSeam.MaxLength(2)
+Gui.Form.txtOuterSeam.NumericOnly(True)
+Gui.Form.txtOuterSeam.DefaultValue("00")
+Gui.Form.txtOuterSeam.ControlGroup(1)
+Gui.Form.txtOuterSeam.TabStop(True)
+Gui.Form.txtOuterSeam.TabIndex(6)
+Gui.Form.txtOuterSeam.DefaultValue("")
+Gui.Form.txtOuterSeam.Event(LostFocus,LostFocus)
+Gui.Form.txtTriangles.Create(TextBox,"",True,375,300,0,16920,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtTriangles.MaxLength(2)
+Gui.Form.txtTriangles.NumericOnly(True)
+Gui.Form.txtTriangles.DefaultValue("00")
+Gui.Form.txtTriangles.ControlGroup(1)
+Gui.Form.txtTriangles.TabStop(True)
+Gui.Form.txtTriangles.TabIndex(14)
+Gui.Form.txtTriangles.DefaultValue("")
+Gui.Form.txtTriangles.Event(LostFocus,LostFocus)
+Gui.Form.txtRips.Create(TextBox,"",True,375,300,0,16230,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtRips.MaxLength(2)
+Gui.Form.txtRips.NumericOnly(True)
+Gui.Form.txtRips.DefaultValue("00")
+Gui.Form.txtRips.ControlGroup(1)
+Gui.Form.txtRips.TabStop(True)
+Gui.Form.txtRips.TabIndex(13)
+Gui.Form.txtRips.DefaultValue("")
+Gui.Form.txtRips.Event(LostFocus,LostFocus)
+Gui.Form.txtInner.Create(TextBox,"",True,375,300,0,11700,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtInner.MaxLength(2)
+Gui.Form.txtInner.NumericOnly(True)
+Gui.Form.txtInner.DefaultValue("00")
+Gui.Form.txtInner.ControlGroup(1)
+Gui.Form.txtInner.TabStop(True)
+Gui.Form.txtInner.TabIndex(7)
+Gui.Form.txtInner.DefaultValue("")
+Gui.Form.txtInner.Event(LostFocus,LostFocus)
+Gui.Form.txtPlasma.Create(TextBox,"",True,375,300,0,12465,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtPlasma.MaxLength(2)
+Gui.Form.txtPlasma.NumericOnly(True)
+Gui.Form.txtPlasma.DefaultValue("00")
+Gui.Form.txtPlasma.ControlGroup(1)
+Gui.Form.txtPlasma.Tabstop(True)
+Gui.Form.txtPlasma.TabIndex(8)
+Gui.Form.txtPlasma.DefaultValue("")
+Gui.Form.txtPlasma.Event(LostFocus,LostFocus)
+Gui.Form.txtFlangeEncap.Create(TextBox,"",True,375,300,0,13275,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtFlangeEncap.MaxLength(2)
+Gui.Form.txtFlangeEncap.NumericOnly(True)
+Gui.Form.txtFlangeEncap.DefaultValue("00")
+Gui.Form.txtFlangeEncap.ControlGroup(1)
+Gui.Form.txtFlangeEncap.TabStop(True)
+Gui.Form.txtFlangeEncap.TabIndex(9)
+Gui.Form.txtFlangeEncap.DefaultValue("")
+Gui.Form.txtFlangeEncap.Event(LostFocus,LostFocus)
+Gui.Form.txtPorosity.Create(TextBox,"",True,375,300,0,14865,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtPorosity.MaxLength(2)
+Gui.Form.txtPorosity.NumericOnly(True)
+Gui.Form.txtPorosity.DefaultValue("00")
+Gui.Form.txtPorosity.ControlGroup(1)
+Gui.Form.txtPorosity.TabStop(True)
+Gui.Form.txtPorosity.TabIndex(11)
+Gui.Form.txtPorosity.DefaultValue("")
+Gui.Form.txtPorosity.Event(LostFocus,LostFocus)
+Gui.Form.txtSwanNecks.Create(TextBox,"",True,375,300,0,14085,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtSwanNecks.MaxLength(2)
+Gui.Form.txtSwanNecks.NumericOnly(True)
+Gui.Form.txtSwanNecks.DefaultValue("00")
+Gui.Form.txtSwanNecks.ControlGroup(1)
+Gui.Form.txtSwanNecks.TabStop(True)
+Gui.Form.txtSwanNecks.TabIndex(10)
+Gui.Form.txtSwanNecks.DefaultValue("")
+Gui.Form.txtSwanNecks.Event(LostFocus,LostFocus)
+Gui.Form.txtColdLap.Create(TextBox,"",True,375,300,0,15615,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtColdLap.MaxLength(2)
+Gui.Form.txtColdLap.NumericOnly(True)
+Gui.Form.txtColdLap.DefaultValue("00")
+Gui.Form.txtColdLap.ControlGroup(1)
+Gui.Form.txtColdLap.TabStop(True)
+Gui.Form.txtColdLap.TabIndex(12)
+Gui.Form.txtColdLap.DefaultValue("")
+Gui.Form.txtColdLap.Event(LostFocus,LostFocus)
+Gui.Form.lblOuterSeam.Create(Label,"Outer Seam",True,705,405,0,10935,150,True,2,"Arial",8,-2147483633,0)
+Gui.Form.lblFlangeEncap.Create(Label,"Flange / Encap",True,705,405,0,13110,150,True,2,"Arial",8,-2147483633,0)
+Gui.Form.lblInnerRollingWelds.Create(Label,"In. Roll Welds",True,705,405,0,11580,150,True,2,"Arial",8,-2147483633,0)
+Gui.Form.lblPlasmaWeld.Create(Label,"Plasma Weld",True,705,405,0,12315,150,True,2,"Arial",8,-2147483633,0)
+Gui.Form.lblSwanNecks.Create(Label,"Swan Necks",True,705,405,0,13935,150,True,2,"Arial",8,-2147483633,0)
+Gui.Form.lblPorosity.Create(Label,"Pororsity",True,705,405,0,14655,150,True,2,"Arial",8,-2147483633,0)
+Gui.Form.lblColdLap.Create(Label,"Cold Lap",True,705,405,0,15435,150,True,2,"Arial",8,-2147483633,0)
+Gui.Form.lblRips.Create(Label,"Rips",True,555,405,0,16140,150,True,2,"Arial",8,-2147483633,0)
+Gui.Form.lblTriangles.Create(Label,"Triangles",True,765,375,0,16725,150,True,2,"Arial",8,-2147483633,0)
+Gui.Form.lbl1.Create(Label,"Seq",True,510,255,0,2265,270,True,0,"Arial",8,-2147483633,0)
+Gui.Form.txtSeq.Create(TextBox,"",True,915,300,0,2100,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtSeq.MaxLength(6)
+Gui.Form.txtSeq.Locked(True)
+Gui.Form.cmdBrowse.Create(Button)
+Gui.Form.cmdBrowse.Size(330,330)
+Gui.Form.cmdBrowse.Position(1695,525)
+Gui.Form.cmdBrowse.Caption("^")
+Gui.Form.cmdBrowse.Event(Click,cmdBrowse_Click)
+Gui.Form.txtRad.Create(TextBox,"",True,1770,300,0,4140,525,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtRad.Locked(True)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+'this is the GUI program for proj 4286 for datasheet entries
+'programmer: SKC Team SkyNet
+'date: 12/28/16
+v.Local..BulkDeclareString(sJob, sSuffix,sSeq, sJobSuffix, sError,sWC, sSql,sBDFData,sFile)
+v.Local..BulkDeclareLong(iRow, iCount)
+'open connection
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass)
+'load the mm drop down
+gui.Form.ddlMM.AddItem("MM1")
+gui.Form.ddlMM.AddItem("MM2")
+'F.Data.DataTable.CreateFromSQL("DataSheet","conx", "Select * From GCG_4286_DataSheet", True)
+'display the screen
+gui.Form..Visible(True)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_GUI.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.Form_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sMap, sKey)
+'close the form
+gui.Form..Visible(false)
+'Save Data To the DB
+F.Intrinsic.Control.If(v.DataTable.DataSheet.Exists, =, True)
+	v.Local.sKey.set("Job*!*Suffix*!*Seq*!*RAD")
+	F.Data.DataTable.RemoveColumn("DataSheet", "Delete")
+	F.Data.DataTable.SaveToDB("DataSheet", "conx","GCG_4286_DataSheet", v.Local.sKey, 7) 
+F.Intrinsic.Control.EndIf
+'closing connection and ending program
+F.ODBC.Connection!conx.Close
+f.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_GUI.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.cmdAdd_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdAdd_Click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+v.Local.bRet.Declare(Boolean)
+'Check that a Serial Number has been selected
+v.Local..BulkDeclareString(sSerial, sFilter, sRet)
+V.Local.sSerial.Set(v.Screen.Form!txtRAD.Text)
+F.Intrinsic.Control.If(v.Local.sSerial.Trim, =, "")
+	F.Intrinsic.UI.Msgbox("Serial Number Not Selected!", "Error Missing Data")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+'Check that the selected Serial number does not already exist.
+F.Intrinsic.String.Build("RAD = '{0}'", v.Local.sSerial, v.Local.sFilter)
+F.Data.DataView.Create("DataSheet", "Serial", 22, v.Local.sFilter,)
+F.Intrinsic.Control.If(v.dataView.DataSheet!Serial.Rowcount, >, 0)
+	'Overwrite the data for that row
+	F.Data.DataView.SetValue("DataSheet", "Serial", 0,"WorkCenter", v.Screen.Form!txtWorkcenter.Text, "MM", v.Screen.Form!ddlMM.Text, "Line_Operator", v.Screen.Form!txtLineOperator.Text, "Line_Date", v.Screen.Form!dtpLineDate.Value, "Weld_By", v.Screen.Form!txtSwanWeldby.Text, "Outer_Seam", v.Screen.Form!txtOuterSeam.Text, "Inner_Rolling", v.Screen.Form!txtInner.Text, "Plasma_Weld", v.Screen.Form!txtPlasma.text,"Flange_Encap", v.Screen.Form!txtFlangeEncap.Text, "Swan_Necks", v.Screen.Form!txtSwanNecks.Text, "Porosity", v.Screen.Form!txtPorosity.Text, "Cold_Lap", v.Screen.Form!txtColdLap.Text, "Rips", v.Screen.Form!txtRips.Text, "Triangles", v.Screen.Form!txtTriangles.Text)
+f.Intrinsic.Control.Else
+'Add to grid.
+	F.Data.DataTable.AddRow("DataSheet","Job", v.Screen.Form!txtJob.Text, "Suffix", v.Screen.Form!TxtSuffix.Text, "Seq", v.Screen.Form!TxtSeq.Text, "RAD",v.Screen.Form!txtRAD.Text,"WorkCenter", v.Screen.Form!txtWorkcenter.Text, "MM", v.Screen.Form!ddlMM.Text, "Line_Operator", v.Screen.Form!txtLineOperator.Text, "Line_Date", v.Screen.Form!dtpLineDate.Value, "Weld_By", v.Screen.Form!txtSwanWeldby.Text, "Outer_Seam", v.Screen.Form!txtOuterSeam.Text, "Inner_Rolling", v.Screen.Form!txtInner.Text, "Plasma_Weld", v.Screen.Form!txtPlasma.text,"Flange_Encap", v.Screen.Form!txtFlangeEncap.Text, "Swan_Necks", v.Screen.Form!txtSwanNecks.Text, "Porosity", v.Screen.Form!txtPorosity.Text, "Cold_Lap", v.Screen.Form!txtColdLap.Text, "Rips", v.Screen.Form!txtRips.Text, "Triangles", v.Screen.Form!txtTriangles.Text)
+F.Intrinsic.Control.EndIf
+f.Data.DataView.Close("DataSheet", "Serial")
+gui.Form..ClearGroup(1)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdAdd_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_GUI.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdAdd_Click.End
+
+Program.Sub.cmdDelete_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sFilter)
+v.Local..BulkDeclareLong(iCount, iRow)
+v.Local.sFilter.Set("Delete = 'TRUE'")
+F.Data.DataView.Create("DataSheet", "Delete", 22, v.Local.sFilter, )
+'Delete the Line
+F.Intrinsic.Control.If(v.dataView.DataSheet!Delete.RowCount, >, 0)
+	F.Intrinsic.Control.For(v.Local.iCount, v.DataView.DataSheet!Delete.RowCount--, 0, -1)
+		v.Local.iRow.Set(V.DataView.DataSheet!Delete(v.Local.iCount).DataTableIndex)
+		F.Data.DataTable.DeleteRow("DataSheet", v.Local.iRow)
+	F.Intrinsic.Control.Next(v.Local.iCount)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_GUI.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdDelete_Click.End
+
+Program.Sub.load_screen.Start
+F.Intrinsic.Control.SetErrorHandler("load_screen_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local.sError.Declare(String)
+'check to see if there is data for this seq.
+v.Local..BulkDeclareString(sJob, sSuffix, sSeq, sSql)
+v.Local.sJob.Set(v.Screen.Form!txtJob.Text)
+v.Local.sSuffix.Set(v.Screen.Form!txtSuffix.Text)
+F.Intrinsic.String.Build("Select * From GCG_4286_DataSheet where Job = '{0}' and Suffix = '{1}'", v.Local.sJob.Trim, v.Local.sSuffix.Trim, v.Local.sSql)
+F.Data.DataTable.CreateFromSQL("DataSheet", "conx", v.Local.sSql, True)
+F.Data.DataTable.AddColumn("DataSheet", "Delete", "Boolean", False)
+Gui.Form.GsGridControl1.AddGridviewFromDatatable("SheetView", "DataSheet")
+Gui.Form.GsGridControl1.SetGridviewProperty("SheetView", "Editable", False)
+gui.Form.GsGridControl1.SetGridviewProperty("Sheetview", "Readonly", True)
+Gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Line_Operator", "Caption", "Element Op.")
+Gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Line_Date", "Caption", "Date")
+Gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Weld_By", "Caption", "Weld By")
+Gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Outer_Seam", "Caption", "OT. Seam")
+Gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Inner_Rolling", "Caption", "In. Roll")
+Gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Plasma_Weld", "Caption", "Plasma")
+Gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Flange_Encap", "Caption", "Flange")
+Gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Swan_Necks", "Caption", "Swan")
+Gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Cold_Lap", "Caption", "Cold")
+gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Delete", "readonly", False)
+gui.Form.GsGridControl1.SetColumnProperty("SheetView", "Delete", "AllowEdit", True)
+Gui.Form.GsGridControl1.MainView("SheetView")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("load_screen_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_GUI.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.load_screen.End
+
+Program.Sub.LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("ScreenSU_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+v.Local.bRet.Declare(Boolean)
+v.Local.sValue.Declare(String)
+v.Local.sValue.Set(v.Screen.Form![v.Args.ControlName].text)
+F.Intrinsic.Math.IsNumeric(v.Local.sValue, v.Local.bRet)
+F.Intrinsic.Control.If(v.Local.sValue.Trim, !=, "")
+	F.Intrinsic.Control.If(v.Local.bRet, =, False)
+		F.Intrinsic.UI.Msgbox("Value needs to be Numeric!", "Invalid Data")
+		gui.Form.[v.Args.ControlName].Text("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("ScreenSU_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_GUI.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.LostFocus.End
+
+Program.Sub.GsGridControl1_RowClick.Start
+F.Intrinsic.Control.SetErrorHandler("LostFocus_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+v.Local..BulkDeclareString(sSerial, sFilter)
+v.Local.bRet.Declare(Boolean)
+F.Intrinsic.Control.If(v.Args.Column, =, "Delete")
+	F.Data.DataTable.SetValue("DataSheet", v.Args.RowIndex, "Delete", True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("RAD = '{0}'", v.DataTable.DataSheet(v.Args.RowIndex).RAD!FieldValTrim, v.Local.sFilter)
+F.Data.DataView.Create("DataSheet", "Serial", 22, v.Local.sFilter,)
+'move data to the textboxes
+Gui.Form.txtSeq.Text(v.Dataview.DataSheet!Serial(0).Seq!FieldValTrim)
+Gui.Form.txtWorkcenter.Text(v.Dataview.DataSheet!Serial(0).Workcenter!FieldValTrim)
+gui.Form.ddlMM.FindItem(v.Dataview.DataSheet!Serial(0).MM!FieldValTrim, v.Local.bRet)
+gui.Form.txtRAD.Text(v.Dataview.DataSheet!Serial(0).RAD!FieldValTrim)
+gui.Form.txtLineOperator.Text(v.Dataview.DataSheet!Serial(0).Line_Operator!FieldValTrim)
+gui.Form.dtpLineDate.Value(v.Dataview.DataSheet!Serial(0).Line_Date!fieldVal)
+gui.Form.txtSwanWeldby.Text(v.Dataview.DataSheet!Serial(0).Weld_By!FieldValTrim)
+gui.Form.txtOuterSeam.Text(v.Dataview.DataSheet!Serial(0).Outer_Seam!FieldValLong)
+gui.Form.txtInner.Text(v.Dataview.DataSheet!Serial(0).Inner_Rolling!FieldValLong)
+gui.Form.txtPlasma.Text(v.Dataview.DataSheet!Serial(0).Plasma_Weld!FieldValLong)
+gui.Form.txtFlangeEncap.Text(v.Dataview.DataSheet!Serial(0).flange_Encap!FieldValLong)
+gui.Form.txtSwanNecks.Text(v.Dataview.DataSheet!Serial(0).Swan_Necks!FieldValLong)
+gui.Form.txtPorosity.Text(v.Dataview.DataSheet!Serial(0).Porosity!FieldValLong)	
+gui.Form.txtColdLap.Text(v.Dataview.DataSheet!Serial(0).Cold_Lap!FieldValLong)
+gui.Form.txtRips.Text(v.Dataview.DataSheet!Serial(0).Rips!FieldValLong)
+gui.Form.txtTriangles.Text(v.Dataview.DataSheet!Serial(0).Triangles!FieldValLong)
+F.Data.DataView.Close("DataSheet", "Serial")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("LostFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_GUI.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.GsGridControl1_RowClick.End
+
+Program.Sub.cmdBrowse_Click.Start
+'browser for job
+
+v.Local..BulkDeclareString(sRet, sTitles)
+v.Local.iWidths.Declare(Long)
+F.Intrinsic.String.Split("Job*!*Suffix", "*!*", v.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*800", "*!*", v.Local.iWidths)
+F.Intrinsic.UI.Browser("Select a Job!", "conx", "Select Distinct Job, Suffix from GCG_4286_DataSheet", v.Local.sTitles, v.Local.iWidths, v.Local.sRet)
+F.Intrinsic.Control.If(v.Local.sRet, !=, "***CANCEL***")
+	F.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+	Gui.Form.txtJob.Text(v.Local.sRet(0).Trim)
+	gui.Form.txtSuffix.Text(v.Local.sRet(1).Trim)
+F.Intrinsic.Control.EndIf
+f.Intrinsic.Control.CallSub(load_screen)
+Program.Sub.cmdBrowse_Click.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$WAW$}$12/18/2016 7:33:04 PM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This project was quoted by Strider Smith and coded by Sisco Quiroz
+September 2016.
+
+This code will run from a custom menu item under Production>Shop Floor Control>Transactions>Transfer WIP to WIP for multiple jobs.
+Program.Sub.Comments.End
