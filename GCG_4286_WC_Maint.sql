@@ -1,0 +1,2 @@
+CREATE TABLE "GCG_4286_WC_Maint"(
+ "WorkCenter" CHAR(4) NOT NULL );
