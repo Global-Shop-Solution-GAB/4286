@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SyntaxEdit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BorderStyle>None</BorderStyle>
+  <Pages>
+    <DefaultPage>
+      <Header>
+        <Offset>
+          <X>0</X>
+          <Y>0</Y>
+        </Offset>
+      </Header>
+      <Footer>
+        <Offset>
+          <X>0</X>
+          <Y>0</Y>
+        </Offset>
+      </Footer>
+      <PageSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </PageSize>
+    </DefaultPage>
+  </Pages>
+  <DisplayStrings />
+  <Selection>
+    <SelectionRect>
+      <Location>
+        <X>0</X>
+        <Y>187</Y>
+      </Location>
+      <Size>
+        <Width>24</Width>
+        <Height>2</Height>
+      </Size>
+      <X>0</X>
+      <Y>187</Y>
+      <Width>24</Width>
+      <Height>2</Height>
+    </SelectionRect>
+    <Options>UseColors OverwriteBlocks SelectLineOnTripleClick CopyLineWhenEmpty SelectWordOnCtrlClick</Options>
+  </Selection>
+  <Gutter>
+    <LineNumbersForeColor>WindowText</LineNumbersForeColor>
+    <Options>PaintLineNumbers PaintBookMarks PaintLineModificators</Options>
+  </Gutter>
+  <Margin>
+    <Visible>false</Visible>
+  </Margin>
+  <LineStyles />
+  <LineSeparator />
+  <Printing>
+    <Footer>
+      <Offset>
+        <X>0</X>
+        <Y>0</Y>
+      </Offset>
+    </Footer>
+    <Header>
+      <Offset>
+        <X>0</X>
+        <Y>0</Y>
+      </Offset>
+    </Header>
+  </Printing>
+  <WhiteSpace />
+  <TextSource>
+    <Position>
+      <X>0</X>
+      <Y>187</Y>
+    </Position>
+    <Lexer>
+      <Scheme>
+        <Author>Quantum Whale, LLC.</Author>
+        <Copyright>Copyright (c) 2004 - 2014 Quantum Whale LLC.</Copyright>
+        <FileType>gas</FileType>
+        <Version>1.5</Version>
+        <Styles>
+          <Style>
+            <Name>idents</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>numbers</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>reswords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>comments</Name>
+            <ForeColor>Green</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>xmlcomments</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>symbols</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>whitespace</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>strings</Name>
+            <ForeColor>Maroon</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>directives</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>htmlparams</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>syntax errors</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>codes nippets</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>255:180:228:180</BackColor>
+          </Style>
+          <Style>
+            <Name>GabReservedWords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabTokenWithBrackets</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabFunctionIntrinsicDebug</Name>
+            <ForeColor>White</ForeColor>
+            <BackColor>Red</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>GabVariable</Name>
+            <ForeColor>Teal</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabVariableSystemDefined</Name>
+            <ForeColor>Teal</ForeColor>
+            <FontStyle>Bold Italic</FontStyle>
+          </Style>
+          <Style>
+            <Name>GabGui</Name>
+            <ForeColor>OrangeRed</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabProgramSubStartEnd</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>LightGray</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+        </Styles>
+      </Scheme>
+    </Lexer>
+    <TextStrings>
+      <Lines>
+        <string>Program.Sub.ScreenSU.Start</string>
+        <string>Gui.Form..Create</string>
+        <string>Gui.Form..Size(3390,5715)</string>
+        <string>Gui.Form..MinX(0)</string>
+        <string>Gui.Form..MinY(0)</string>
+        <string>Gui.Form..Position(0,0)</string>
+        <string>Gui.Form..BackColor(-2147483633)</string>
+        <string>Gui.Form..MousePointer(0)</string>
+        <string>Gui.Form..Sizeable(False)</string>
+        <string>Gui.Form..Event(UnLoad,Form_UnLoad)</string>
+        <string>Gui.Form..Caption("Data Sheet Maintenance")</string>
+        <string>Gui.Form..MaxButton(False)</string>
+        <string>Gui.Form.GsGridControl1.Create(GsGridControl)</string>
+        <string>Gui.Form.GsGridControl1.Size(2865,3060)</string>
+        <string>Gui.Form.GsGridControl1.Position(120,1470)</string>
+        <string>Gui.Form.txtWorkcenter.Create(TextBox,"",True,795,300,0,1200,255,True,0,"Arial",8,-2147483643,1)</string>
+        <string>Gui.Form.txtWorkcenter.Locked(False)</string>
+        <string>Gui.Form.lblWorkcenter.Create(Label,"Workcenter",True,1005,255,0,180,300,True,0,"Arial",8,-2147483633,0)</string>
+        <string>Gui.Form.cmdAdd.Create(Button)</string>
+        <string>Gui.Form.cmdAdd.Size(855,375)</string>
+        <string>Gui.Form.cmdAdd.Position(165,855)</string>
+        <string>Gui.Form.cmdAdd.Caption("Add")</string>
+        <string>Gui.Form.cmdAdd.Event(Click,cmdAdd_Click)</string>
+        <string>Gui.Form.cmdDelete.Create(Button)</string>
+        <string>Gui.Form.cmdDelete.Size(855,375)</string>
+        <string>Gui.Form.cmdDelete.Position(120,4635)</string>
+        <string>Gui.Form.cmdDelete.Caption("Delete")</string>
+        <string>Gui.Form.cmdDelete.Event(Click,cmdDelete_Click)</string>
+        <string>Gui.Form.cmd1.Create(Button)</string>
+        <string>Gui.Form.cmd1.Size(330,330)</string>
+        <string>Gui.Form.cmd1.Position(2085,255)</string>
+        <string>Gui.Form.cmd1.Caption("^")</string>
+        <string>Gui.Form.cmd1.Event(Click,cmdBrowse_Click)</string>
+        <string>Program.Sub.ScreenSU.End</string>
+        <string />
+        <string>Program.Sub.Preflight.Start</string>
+        <string>Program.Sub.Preflight.End</string>
+        <string />
+        <string>Program.Sub.Main.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Main_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string>v.Local..BulkDeclareString(sError, sSql)</string>
+        <string>'this is the maintenance program for proj 4286 to maintain datasheet entries</string>
+        <string>'programmer: SKC</string>
+        <string>'date: 12/28/16</string>
+        <string>'open connection</string>
+        <string>F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass)</string>
+        <string>v.Local.sSql.Set("Select distinct Machine, Machine from Workcenters")</string>
+        <string>F.Data.Dictionary.CreatefromSql("Machine", "conx", v.Local.sSql,4)</string>
+        <string>gui.Form.txtWorkcenter.AddAutoCompleteItem("Machine","Dictionary")</string>
+        <string>f.Intrinsic.Control.CallSub(load_screen)</string>
+        <string>'display the screen</string>
+        <string>gui.Form..Visible(True)</string>
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string>F.Intrinsic.Control.Label("Main_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	f.Intrinsic.Control.CallSub(form_unload)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string>Program.Sub.Main.End</string>
+        <string />
+        <string>Program.Sub.Form_UnLoad.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Main_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string>V.Local.sError.Declare(String)</string>
+        <string>'close the form</string>
+        <string>gui.Form..Visible(false)</string>
+        <string>F.Intrinsic.Control.CallSub(syncdb)</string>
+        <string>'closing connection and ending program</string>
+        <string>F.ODBC.Connection!conx.Close</string>
+        <string>f.Intrinsic.Control.End</string>
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string>F.Intrinsic.Control.Label("Main_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	f.Intrinsic.Control.End</string>
+        <string />
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string>Program.Sub.Form_UnLoad.End</string>
+        <string />
+        <string>Program.Sub.cmdDelete_Click.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Main_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string>v.Local..BulkDeclareString(sError, sFilter)</string>
+        <string>v.Local..BulkDeclareLong(iCount, iRow)</string>
+        <string>v.Local.sFilter.Set("Delete = 'TRUE'")</string>
+        <string>F.Data.DataView.Create("Workcenter", "Delete", 22,v.Local.sFilter,"Workcenter asc")</string>
+        <string>F.Intrinsic.Control.If(v.Dataview.Workcenter!Delete.Rowcount, &gt;, 0)</string>
+        <string>	F.Intrinsic.Control.For(v.Local.iCount, v.dataview.Workcenter!Delete.Rowcount--,0, -1)</string>
+        <string>		v.Local.iRow.Set(v.Dataview.Workcenter!Delete(v.Local.iCount).DataTableIndex)</string>
+        <string>		F.Data.DataTable.DeleteRow("Workcenter", v.Local.iRow)</string>
+        <string>	F.Intrinsic.Control.Next(v.Local.iCount)</string>
+        <string>F.Intrinsic.Control.EndIf</string>
+        <string>F.Data.DataView.Close("Workcenter", "Delete")</string>
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string>F.Intrinsic.Control.Label("Main_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	f.Intrinsic.Control.CallSub(form_unload)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string>Program.Sub.cmdDelete_Click.End</string>
+        <string />
+        <string>Program.Sub.cmdAdd_Click.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("cmdDelete_Click_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string>v.Local..BulkDeclareString(sError, sFilter,sWC)</string>
+        <string>'check to see if the wc exists</string>
+        <string>v.Local.sWC.Set(v.Screen.Form!txtWorkcenter.Text)</string>
+        <string>F.Intrinsic.Control.If(v.Local.sWC, =, "")</string>
+        <string>	f.Intrinsic.Control.ExitSub</string>
+        <string>F.Intrinsic.Control.EndIf</string>
+        <string>F.Intrinsic.String.Build("Workcenter = '{0}'", v.Local.sWC.UCase, v.Local.sFilter)</string>
+        <string>F.Data.DataView.Create("Workcenter", "Exists", 22,v.Local.sFilter,"Workcenter Asc")</string>
+        <string>'if not add to datatable</string>
+        <string>F.Intrinsic.Control.If(v.DataView.Workcenter!Exists.Rowcount, &gt;, 0)</string>
+        <string>	F.Intrinsic.UI.Msgbox("Duplicate Workcenter!", "Error Duplicate")</string>
+        <string>F.Intrinsic.Control.Else</string>
+        <string>	F.Data.DataTable.AddRow("WorkCenter", "Workcenter",v.Local.sWC.UCase)</string>
+        <string>F.Intrinsic.Control.EndIf</string>
+        <string>F.Data.DataView.Close("Workcenter", "Exists")</string>
+        <string>gui.Form.txtWorkcenter.Text("")</string>
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string>F.Intrinsic.Control.Label("cmdDelete_Click_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	f.Intrinsic.Control.CallSub(form_unload)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string>Program.Sub.cmdAdd_Click.End</string>
+        <string />
+        <string>Program.Sub.Load_Screen.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Load_Screen_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string>v.Local..BulkDeclareString(sError, sSql)</string>
+        <string>V.Local.sSql.Set("Select WorkCenter from GCG_4286_WC_Maint")</string>
+        <string>F.Data.DataTable.CreateFromSQL("Workcenter", "conx", v.Local.sSql, True)</string>
+        <string>F.Data.DataTable.AddColumn("Workcenter", "Delete", "Boolean", False)</string>
+        <string>Gui.Form.GsGridControl1.AddGridviewFromDatatable("Center", "WorkCenter")</string>
+        <string>Gui.Form.GsGridControl1.SetColumnProperty("Center","Delete", "readonly", False)</string>
+        <string>Gui.Form.GsGridControl1.SetColumnProperty("Center","Delete", "AllowEdit", True)</string>
+        <string>gui.Form.GsGridControl1.MainView("Center")</string>
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string>F.Intrinsic.Control.Label("Load_Screen_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	f.Intrinsic.Control.CallSub(form_unload)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string>Program.Sub.Load_Screen.End</string>
+        <string />
+        <string>Program.Sub.cmdBrowse_Click.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Load_Screen_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string>v.Local..BulkDeclareString(sError, sRet)</string>
+        <string>F.Intrinsic.UI.Browser(400,"", v.Local.sRet)</string>
+        <string>F.Intrinsic.Control.If(v.Local.sRet, !=, "***CANCEL***")</string>
+        <string>	F.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)</string>
+        <string>	Gui.Form.txtWorkcenter.Text(v.Local.sRet(0).Trim)</string>
+        <string>f.Intrinsic.Control.EndIf</string>
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string>F.Intrinsic.Control.Label("Load_Screen_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string>Program.Sub.cmdBrowse_Click.End</string>
+        <string />
+        <string>Program.Sub.SyncDB.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("SyncDB_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string>v.Local..BulkDeclareString(sError, sKey, sMap)</string>
+        <string>v.Local.sKey.Set("Workcenter")</string>
+        <string>v.Local.sMap.Set("Workcenter@!@WorkCenter")</string>
+        <string>f.Data.DataTable.SaveToDB("Workcenter", "conx", "GCG_4286_WC_Maint", v.Local.sKey, 7, v.Local.sMap)</string>
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string>F.Intrinsic.Control.Label("SyncDB_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	F.Intrinsic.Control.CallSub(form_unload)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string>Program.Sub.SyncDB.End</string>
+        <string />
+        <string>Program.Sub.Comments.Start</string>
+        <string>${$0$}$$}$WAW$}$12/18/2016 7:33:04 PM$}$False</string>
+        <string>Program.Sub.Comments.End</string>
+      </Lines>
+    </TextStrings>
+  </TextSource>
+  <Scrolling>
+    <WindowOriginY>81</WindowOriginY>
+    <Options>None</Options>
+  </Scrolling>
+  <Outlining>
+    <AllowOutlining>true</AllowOutlining>
+    <ImageSize>8</ImageSize>
+    <Ranges>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>0</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>33</Y>
+        </EndPoint>
+        <Text>Program.Sub.ScreenSU</Text>
+        <DisplayText>Program.Sub.ScreenSU</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>35</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>36</Y>
+        </EndPoint>
+        <Text>Program.Sub.Preflight</Text>
+        <DisplayText>Program.Sub.Preflight</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>38</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>60</Y>
+        </EndPoint>
+        <Text>Program.Sub.Main</Text>
+        <DisplayText>Program.Sub.Main</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>62</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>81</Y>
+        </EndPoint>
+        <Text>Program.Sub.Form_UnLoad</Text>
+        <DisplayText>Program.Sub.Form_UnLoad</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>83</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>104</Y>
+        </EndPoint>
+        <Text>Program.Sub.cmdDelete_Click</Text>
+        <DisplayText>Program.Sub.cmdDelete_Click</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>106</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>132</Y>
+        </EndPoint>
+        <Text>Program.Sub.cmdAdd_Click</Text>
+        <DisplayText>Program.Sub.cmdAdd_Click</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>134</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>152</Y>
+        </EndPoint>
+        <Text>Program.Sub.Load_Screen</Text>
+        <DisplayText>Program.Sub.Load_Screen</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>154</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>169</Y>
+        </EndPoint>
+        <Text>Program.Sub.cmdBrowse_Click</Text>
+        <DisplayText>Program.Sub.cmdBrowse_Click</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>171</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>185</Y>
+        </EndPoint>
+        <Text>Program.Sub.SyncDB</Text>
+        <DisplayText>Program.Sub.SyncDB</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>187</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>189</Y>
+        </EndPoint>
+        <Text>Program.Sub.Comments</Text>
+        <DisplayText>Program.Sub.Comments</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+    </Ranges>
+  </Outlining>
+  <HyperText />
+  <Spelling />
+  <Braces />
+</SyntaxEdit>
