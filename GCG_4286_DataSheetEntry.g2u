@@ -1,0 +1,190 @@
+Program.Sub.ScreenSU.Start
+Gui.Form..Create
+Gui.Form..Size(3390,5715)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..BackColor(-2147483633)
+Gui.Form..MousePointer(0)
+Gui.Form..Sizeable(False)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form..Caption("Data Sheet Maintenance")
+Gui.Form..MaxButton(False)
+Gui.Form.GsGridControl1.Create(GsGridControl)
+Gui.Form.GsGridControl1.Size(2865,3060)
+Gui.Form.GsGridControl1.Position(120,1470)
+Gui.Form.txtWorkcenter.Create(TextBox,"",True,795,300,0,1200,255,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtWorkcenter.Locked(False)
+Gui.Form.lblWorkcenter.Create(Label,"Workcenter",True,1005,255,0,180,300,True,0,"Arial",8,-2147483633,0)
+Gui.Form.cmdAdd.Create(Button)
+Gui.Form.cmdAdd.Size(855,375)
+Gui.Form.cmdAdd.Position(165,855)
+Gui.Form.cmdAdd.Caption("Add")
+Gui.Form.cmdAdd.Event(Click,cmdAdd_Click)
+Gui.Form.cmdDelete.Create(Button)
+Gui.Form.cmdDelete.Size(855,375)
+Gui.Form.cmdDelete.Position(120,4635)
+Gui.Form.cmdDelete.Caption("Delete")
+Gui.Form.cmdDelete.Event(Click,cmdDelete_Click)
+Gui.Form.cmd1.Create(Button)
+Gui.Form.cmd1.Size(330,330)
+Gui.Form.cmd1.Position(2085,255)
+Gui.Form.cmd1.Caption("^")
+Gui.Form.cmd1.Event(Click,cmdBrowse_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sSql)
+'this is the maintenance program for proj 4286 to maintain datasheet entries
+'programmer: SKC
+'date: 12/28/16
+'open connection
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass)
+v.Local.sSql.Set("Select distinct Machine, Machine from Workcenters")
+F.Data.Dictionary.CreatefromSql("Machine", "conx", v.Local.sSql,4)
+gui.Form.txtWorkcenter.AddAutoCompleteItem("Machine","Dictionary")
+f.Intrinsic.Control.CallSub(load_screen)
+'display the screen
+gui.Form..Visible(True)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.Form_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+'close the form
+gui.Form..Visible(false)
+F.Intrinsic.Control.CallSub(syncdb)
+'closing connection and ending program
+F.ODBC.Connection!conx.Close
+f.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.cmdDelete_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sFilter)
+v.Local..BulkDeclareLong(iCount, iRow)
+v.Local.sFilter.Set("Delete = 'TRUE'")
+F.Data.DataView.Create("Workcenter", "Delete", 22,v.Local.sFilter,"Workcenter asc")
+F.Intrinsic.Control.If(v.Dataview.Workcenter!Delete.Rowcount, >, 0)
+	F.Intrinsic.Control.For(v.Local.iCount, v.dataview.Workcenter!Delete.Rowcount--,0, -1)
+		v.Local.iRow.Set(v.Dataview.Workcenter!Delete(v.Local.iCount).DataTableIndex)
+		F.Data.DataTable.DeleteRow("Workcenter", v.Local.iRow)
+	F.Intrinsic.Control.Next(v.Local.iCount)
+F.Intrinsic.Control.EndIf
+F.Data.DataView.Close("Workcenter", "Delete")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdDelete_Click.End
+
+Program.Sub.cmdAdd_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdDelete_Click_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sFilter,sWC)
+'check to see if the wc exists
+v.Local.sWC.Set(v.Screen.Form!txtWorkcenter.Text)
+F.Intrinsic.Control.If(v.Local.sWC, =, "")
+	f.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("Workcenter = '{0}'", v.Local.sWC.UCase, v.Local.sFilter)
+F.Data.DataView.Create("Workcenter", "Exists", 22,v.Local.sFilter,"Workcenter Asc")
+'if not add to datatable
+F.Intrinsic.Control.If(v.DataView.Workcenter!Exists.Rowcount, >, 0)
+	F.Intrinsic.UI.Msgbox("Duplicate Workcenter!", "Error Duplicate")
+F.Intrinsic.Control.Else
+	F.Data.DataTable.AddRow("WorkCenter", "Workcenter",v.Local.sWC.UCase)
+F.Intrinsic.Control.EndIf
+F.Data.DataView.Close("Workcenter", "Exists")
+gui.Form.txtWorkcenter.Text("")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdDelete_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdAdd_Click.End
+
+Program.Sub.Load_Screen.Start
+F.Intrinsic.Control.SetErrorHandler("Load_Screen_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sSql)
+V.Local.sSql.Set("Select WorkCenter from GCG_4286_WC_Maint")
+F.Data.DataTable.CreateFromSQL("Workcenter", "conx", v.Local.sSql, True)
+F.Data.DataTable.AddColumn("Workcenter", "Delete", "Boolean", False)
+Gui.Form.GsGridControl1.AddGridviewFromDatatable("Center", "WorkCenter")
+Gui.Form.GsGridControl1.SetColumnProperty("Center","Delete", "readonly", False)
+Gui.Form.GsGridControl1.SetColumnProperty("Center","Delete", "AllowEdit", True)
+gui.Form.GsGridControl1.MainView("Center")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Load_Screen_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Load_Screen.End
+
+Program.Sub.cmdBrowse_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Load_Screen_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sRet)
+F.Intrinsic.UI.Browser(400,"", v.Local.sRet)
+F.Intrinsic.Control.If(v.Local.sRet, !=, "***CANCEL***")
+	F.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+	Gui.Form.txtWorkcenter.Text(v.Local.sRet(0).Trim)
+f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Load_Screen_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdBrowse_Click.End
+
+Program.Sub.SyncDB.Start
+F.Intrinsic.Control.SetErrorHandler("SyncDB_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sKey, sMap)
+v.Local.sKey.Set("Workcenter")
+v.Local.sMap.Set("Workcenter@!@WorkCenter")
+f.Data.DataTable.SaveToDB("Workcenter", "conx", "GCG_4286_WC_Maint", v.Local.sKey, 7, v.Local.sMap)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("SyncDB_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4286_DataSheetEntry.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.SyncDB.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$WAW$}$12/18/2016 7:33:04 PM$}$False
+Program.Sub.Comments.End
